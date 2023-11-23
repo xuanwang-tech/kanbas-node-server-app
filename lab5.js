@@ -92,17 +92,31 @@ const Lab5 = (app) => {
   //         todos.splice(todos.indexOf(todo), 1);
   //         res.sendStatus(200);
   //     });
+      // app.delete("/a5/todos/:id", (req, res) => {
+      //   const { id } = req.params;
+      //   const index = todos.findIndex((todo) => todo.id === parseInt(id));
+      //   if (index === -1) {
+      //     // res.status(404).send("Todo not found");
+      //     // res.res.status(404).json({ message: `Unable to delete Todo with ID ${id}` });
+      //     res.status(404).send("Todo not found");
+      //     return;
+      //   }
+      //   todos.splice(index, 1);
+      //   res.json(todos);
+      // });
       app.delete("/a5/todos/:id", (req, res) => {
-        const { id } = req.params;
-        const index = todos.findIndex((todo) => todo.id === parseInt(id));
-        if (index === -1) {
-          // res.status(404).send("Todo not found");
-          res.res.status(404).json({ message: `Unable to delete Todo with ID ${id}` });
-          return;
-        }
-        todos.splice(index, 1);
-        res.json(todos);
-      });
+    const { id } = req.params;
+    const todo = todos.find((t) => t.id === parseInt(id));
+    if (!todo) {
+      res.res
+        .status(404)
+        .json({ message:
+          `Unable to delete Todo with ID ${id}` });
+      return;
+    }
+    todos.splice(todos.indexOf(todo), 1);
+    res.sendStatus(200);
+  });
 
   app.get("/a5/todos/:id", (req, res) => {
     const { id } = req.params;
