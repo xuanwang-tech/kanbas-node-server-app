@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuyh9/kanbas-node-server-app.git"
+    "url": "git+https://github.com/xuanwang-tech/kanbas-node-server-app.git"
   },
   "keywords": [
     "Node",
@@ -18,16 +18,17 @@
     "Server",
     "HTTP"
   ],
-  "author": "huiying yu",
+  "author": "Xuan Wang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yuyh9/kanbas-node-server-app/issues"
+    "url": "https://github.com/xuanwang-tech/kanbas-node-server-app/issues"
   },
-  "homepage": "https://github.com/yuyh9/kanbas-node-server-app#readme",
+  "homepage": "https://github.com/xuanwang-tech/kanbas-node-server-app#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "mongoose": "^8.0.2"
   }
 }
