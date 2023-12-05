@@ -68,14 +68,18 @@ function UserRoutes(app) {
     res.json(200);
   };
 
+  // const account = async (req, res) => {
+  //   const currentUser = req.session["currentUser"];
+  //   if (!currentUser) {
+  //     res.sendStatus(403);
+  //     return;
+  //   }
+  //   res.json(currentUser);
+  // };
   const account = async (req, res) => {
-    const currentUser = req.session["currentUser"];
-    if (!currentUser) {
-      res.sendStatus(403);
-      return;
-    }
-    res.json(currentUser);
-  };
+    res.json(req.session['currentUser']);
+};
+
 
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
