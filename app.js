@@ -14,11 +14,12 @@ mongoose.connect(CONNECTION_STRING);
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 
 
-const db = mongoose.connection;
-db.on('connected', () => {
-  console.log('Connected to MongoDB');
-  console.log(`Database name: ${db.name}`);
-});
+// const db = mongoose.connection;
+// db.on('connected', () => {
+//   console.log('Connected to MongoDB');
+//   console.log(`Database name: ${db.name}`);
+// });
+
 const app = express();
 // app.use(
 //   cors({
